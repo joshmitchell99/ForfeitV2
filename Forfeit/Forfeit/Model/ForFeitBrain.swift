@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ForfeitBrain {
+struct ForfeitBrain { 
     
     var itemArray = [Item]()
     

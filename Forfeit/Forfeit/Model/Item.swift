@@ -9,7 +9,10 @@
 import Foundation
 
 class Item: Codable {
-        var title: String = ""
-        var evidence: Bool = false
-        var done: Bool = false
+    var title: String = ""
+    var evidence: Bool = false
+    var done: Bool = false
+    
+    var date: String = ""
+    var amount: Int = -1
 }

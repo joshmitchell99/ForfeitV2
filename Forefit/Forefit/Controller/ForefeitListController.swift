@@ -75,38 +75,38 @@ class ForefeitListController: UITableViewController {
     
     //MARK - Add New Items
     @IBAction func addButtonPressed(_ sender: UIButton) {
-        
-        // Local variable to hold the value of the new item to be added
-        var textField = UITextField()
-        
-        // Pop-Up to show allowing the user to enter a new todo item
-        // Then append this item into the itemArray
-        let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
-        
-        // Completion block that runs when the user has pressed the add item button
-        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-            // What will happen once the user clicks the Add Item button on our UIAlert
-            // Add the new item to the array
-            // self.itemArray.append(textField.text!)
-            let newItem = Item()
-            newItem.title = textField.text!
-            self.itemArray.append(newItem)
-            // Save the updated item array to the user defaults
-            // (value, key for that value)
-            // self.defaults.set(self.itemArray, forKey: "TodoListArray")
-            self.saveItems()
-            
-        }
-        
-        alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Create new item"
-            
-            // Extends the scope of the alertTextfield to the textField function variable
-            textField = alertTextField
-        }
-
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        performSegue(withIdentifier: "createItemSegue", sender: self)
+//        // Local variable to hold the value of the new item to be added
+//        var textField = UITextField()
+//
+//        // Pop-Up to show allowing the user to enter a new todo item
+//        // Then append this item into the itemArray
+//        let alert = UIAlertController(title: "Add New Todoey Item", message: "", preferredStyle: .alert)
+//
+//        // Completion block that runs when the user has pressed the add item button
+//        let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
+//            // What will happen once the user clicks the Add Item button on our UIAlert
+//            // Add the new item to the array
+//            // self.itemArray.append(textField.text!)
+//            let newItem = Item()
+//            newItem.title = textField.text!
+//            self.itemArray.append(newItem)
+//            // Save the updated item array to the user defaults
+//            // (value, key for that value)
+//            // self.defaults.set(self.itemArray, forKey: "TodoListArray")
+//            self.saveItems()
+//
+//        }
+//
+//        alert.addTextField { (alertTextField) in
+//            alertTextField.placeholder = "Create new item"
+//
+//            // Extends the scope of the alertTextfield to the textField function variable
+//            textField = alertTextField
+//        }
+//
+//        alert.addAction(action)
+//        present(alert, animated: true, completion: nil)
     }
     
     func saveItems() {

@@ -28,6 +28,8 @@ struct ForfeitBrain {
         newItem.amount = amount
         //self.itemArray.append(newItem)
         
+        
+        
         self.saveItem(item: newItem)
         let forfeitListController = ForfeitListController()
         forfeitListController.viewDidLoad()
